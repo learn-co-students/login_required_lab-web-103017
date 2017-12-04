@@ -13,8 +13,12 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
-  # Example resource route with options:
+  root 'application#hello'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
+  get '/secret' => 'secrets#show'
+   # Example resource route with options:
   #   resources :products do
   #     member do
   #       get 'short'
